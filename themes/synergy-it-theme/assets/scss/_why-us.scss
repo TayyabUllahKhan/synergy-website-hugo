@@ -1,0 +1,164 @@
+// Why Us page
+
+.why-us {
+	.top-blurbs {
+		//.col {
+		//	@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+		//}
+	}
+	
+	section {
+		a.btn {
+			background-color: $color-blue-light;
+			
+			&:hover {
+				background-color: tint($color-blue-light, 30%);
+			}
+		}
+	}
+	
+	.how-we-work {
+		.row {
+			@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+		}
+	}
+}
+blockquote {
+	background-color: $color-blue-light;
+	font-size: 150%;
+	font-style: italic;
+	@include rem-vals(padding, true, $main-line-ht-px);
+	position: relative;
+	border: 1px solid $color-blue-light;
+	
+	p {
+		margin-bottom: 0;
+		&:before {
+			content: '\201c';
+			margin-left: -0.35rem;
+		}
+		&:after {
+			content: '\201d';
+		}
+	}
+	
+	&:after {
+		top: 100%;
+		right: 15%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: $color-blue-light transparent transparent;
+		border-width: px2rem(30);
+		border-style: solid;
+	}
+	
+}
+cite {
+	font-style: normal;
+	display: block;
+	text-align: right;
+	@include rem-vals(margin, false, $main-line-ht-px * 1.25, 0, 0, 0);
+}
+
+.table-concerns {
+	width: 100%;
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+	
+	th {
+		//text-align: left;
+	}
+	thead {
+		display: none;
+	}
+	tbody, tr, th, td {
+		border: 0;
+		display: block;
+		text-align: left;
+		white-space: normal;
+	}
+	tr {
+		@include rem-vals(padding, true, $main-line-ht-px * 0.75);
+		//position: relative;
+		//background: url(images/banner-front.jpg);
+	}
+	tbody tr:nth-child(odd) {
+		background-color: $color-grey-2;
+	}
+	td {
+		//padding-left: 35%;
+		position: relative;
+	}
+	td[data-title]:before {
+		content: attr(data-title) ":\00A0";
+		font-weight: bold;
+		display: block;
+		//position: absolute;
+		//left: 0;
+		//width: 30%;
+	}
+	td + td {
+		@include rem-vals(margin, false, $main-line-ht-px * 0.5, 0, 0, 0);
+	}
+	td:empty {
+		display: none;
+	}
+	
+	@media screen and (min-width: $bp2 + 1) {
+		td[data-title]:before {
+			content: "";
+			font-weight: bold;
+			width: auto;
+		}
+		td:empty {
+			display: table-cell;
+		}
+		thead {
+			display: table-header-group;
+			cursor: default;
+		}
+		tbody {
+			display: table-header-group;
+		}
+		tbody, tr, th, td {
+			border: 0;
+			//padding: 0;
+			text-align: left;
+			white-space: normal;
+		}
+		th, td {
+			display: table-cell;
+			@include rem-vals(padding, true, $main-line-ht-px * 0.75, $main-line-ht-px * 0.5);
+			width: 50%;
+			//@include rem-vals(padding, true, 20);
+		}
+		th {
+			@include font-size(25, $main-line-ht-px, true);
+		}
+		td {
+			
+			//@include font-size(20, 40, true);
+			///**/display: inline-block;
+			///**/width: 24%;
+			//border-right: 1px solid #fff;
+		}
+		//td:before {
+		//	content: "\00A0";
+		//	display: inline-block;
+		//	width: 1px;
+		//	height: 100%;
+		//	background-color: #fff;
+		//	//height: 100%;
+		//	//border-right: 1px solid #fff;
+		//}
+		tr {
+			display: table-row;
+			///**/display: block;
+			//@include rem-vals(padding, true, 15);
+		}
+		
+	}
+}

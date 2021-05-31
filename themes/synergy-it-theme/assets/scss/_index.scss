@@ -1,0 +1,37 @@
+// Index page
+
+.index {
+	section img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	
+	.top-blurbs {
+		h1, img {
+			@include rem-vals(margin, false, 0, 0, $main-line-ht-px * 0.5, 0);
+		}
+	}
+}
+
+.index .case-study {
+	.container {
+		color: $color-white;
+		background-color: $color-blue-light;
+		@include rem-vals(padding, false, $pad, 0, $pad, 0);
+	}
+	h2 {
+		color: $color-black;
+		font-weight: bold;
+		//@include font-size(19.5, $main-line-ht-px, true);
+		//@include rem-vals(margin, false, $main-line-ht-px, 0, 0, 0);
+	}
+	.btn {
+		color: $color-blue-light;
+		background-color: #fff;
+		
+		&:hover {
+			color: tint($color-blue-light, 30%);
+		}
+	}
+}

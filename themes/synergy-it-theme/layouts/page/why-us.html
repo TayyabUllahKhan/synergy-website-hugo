@@ -1,0 +1,248 @@
+{{ define "main" }}
+<div class="why-us">
+	<section class="hero-area">
+		<div class="container">
+			<img src="/img/why-us.jpg" />
+			<div class="hero-heading">
+				<div class="hero-heading-content">
+					<h1>2 + 2 = 5</h1>
+					<h2>{{ .Param "hero_area_tagline" }}</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="top-blurbs">
+		<div class="container">
+			<div class="row clearfix">
+				{{ range .Params.whyustiles }}
+				<div class="col third blue-light">
+					<a data-scroll class="btn" href="{{ .url }}">
+						{{ .data }} <i class="icon-arrow-down"></i>
+					</a>
+				</div>
+				{{end}}
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#synergy-edge">
+						<i class="icon-arrow-down"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="synergy-edge"></div>
+	</section>
+
+	<section class="synergy-edge blue-dark">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<h1>{{ .Param "synergy_edge_headline" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col half">
+					{{ range .Params.synergyedgeleft }}
+					<h2>{{ .heading }}</h2>
+					<p>{{ .desc }}</p>
+					{{end}}
+
+					<a target="_blank" class="btn" href="{{ .Param "synergyedgeleftactionurl" }}">
+						{{ .Param "synergyedgeleftactionbutton" }}
+					</a>
+				</div>
+
+				<div class="col half">
+					{{ range .Params.synergyedgeright }}
+					<h2>{{ .heading }}</h2>
+					<p>{{ .desc }}</p>
+					{{end}}
+
+					<a class="btn" href="{{ .Param "synergyedgerightactionurl" }}">
+						{{ .Param "synergyedgerightactionbutton" }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#common-concerns"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="common-concerns"></div>
+	</section>
+
+	<section class="common-concerns blue-light">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<h1>{{ .Param "common_concerns_headline" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col full">
+					<table class="table-concerns">
+						<thead>
+							<tr>
+								<th scope="col">{{ .Param "concernsleft.title" }}</th>
+								<th scope="col">{{ .Param "concernsright.title" }}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-title="Common Concern">
+									{{ .Param "concernsleft.para1" }}
+								</td>
+								<td data-title="How We Address That">
+									{{ .Param "concernsright.para1" }}
+								</td>									
+							</tr>
+							<tr>
+								<td data-title="Common Concern">
+									{{ .Param "concernsleft.para2" }}
+								</td>
+								<td data-title="How We Address That">
+									{{ .Param "concernsright.para2" }}
+								</td>
+							</tr>
+							<tr>
+								<td data-title="Common Concern">
+									{{ .Param "concernsleft.para3" }}
+								</td>
+								<td data-title="How We Address That">
+									{{ .Param "concernsright.para3" }}
+								</td>
+							</tr>
+							<tr>
+								<td data-title="Common Concern">
+									{{ .Param "concernsleft.para4" }}
+								</td>
+								<td data-title="How We Address That">
+									{{ .Param "concernsright.para4" }}
+								</td>
+							</tr>
+							<tr>
+								<td data-title="Common Concern">
+									{{ .Param "concernsleft.para5" }}
+								</td>
+								<td data-title="How We Address That">
+									{{ .Param "concernsright.para5" }}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<a class="btn" href="mailto:info@synergy-it.com">
+						{{ .Param "concernsleft.button" }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#how-we-work"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="how-we-work"></div>
+	</section>
+
+	<section class="how-we-work pink">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<h1>{{ .Param "howwework_headline" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col full">
+					{{ range .Params.howwework }}
+					<p>
+						<strong class="lead-in">
+							{{ .lead }}
+						</strong> <br>
+						{{ .normal }}
+					</p>	
+					{{end}}
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col full">
+					<h2>{{ .Param "collabmodel_headline" }}</h2>
+				</div>
+			</div>
+
+			{{ range .Params.collabmodel}}
+			<div class="row clearfix">
+				<div class="col fourth flow-opposite">
+					<img src="{{ .imgurl }}" />
+				</div>
+				<div class="col three-fourths">
+					<p>
+						<strong>{{ .lead }}</strong> 
+						{{ .normal }}
+					</p>
+				</div>
+			</div>
+			{{end}}
+
+			<div class="row clearfix">
+				<div class="col golden-small">
+					<img src="{{ .Param "wehavebeenstudied.imgurl"}}" />
+				</div>
+				<div class="col golden-large">
+					<h2>{{ .Param "wehavebeenstudied.title"}}</h2>
+					<p>
+						{{ .Param "wehavebeenstudied.desc"}}
+					</p>
+					<a target="_blank" href="/files/icssp-2014-synergy-it-collaboration.pdf" class="btn">
+						{{ .Param "wehavebeenstudied.button"}}
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<figure>
+						<blockquote>
+							<p>
+								{{ .Param "quotesection.quote" | markdownify }}
+							</p>
+						</blockquote>
+						<figcaption>
+							<cite>
+								<strong>{{ .Param "quotesection.author" }}</strong>, {{ .Param "quotesection.degree" }}<br>
+								{{ .Param "quotesection.desg1" }}<br>
+								{{ .Param "quotesection.desg2" }}
+							</cite>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ end }}

@@ -1,0 +1,252 @@
+{{ define "main" }}
+<div class="expertise">
+	<section class="hero-area">
+		<div class="container">
+			<img src="/img/hero-expertise.jpg" />
+			<div class="hero-heading">
+				<div class="hero-heading-content">
+					<h1>{{ .Param "hero_area_title" }}</h1>
+					<h2>
+						{{ .Param "hero_area_tagline" }}
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="soft-dev-section" class="soft-dev-section blue-dark">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col fourth flow-opposite">
+					<img src="/img/softdev.svg" />
+				</div>
+				<div class="col three-fourths">
+					<h1>{{ .Param "customdev_headline" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col half">
+
+					<p>
+						{{ .Param "customdev.desc" }}
+					</p>
+					<h2>{{ .Param "customdev.title" }}</h2>
+					{{ .Param "expertisetlist" | markdownify }}
+
+				</div>
+
+				<div class="col half">
+					<h2>{{ .Param "ourtech_heading" }}</h2>
+
+					<div class="media">
+						<img src="/img/logos/dotnet.png" alt="logo" />
+						<div class="desc">
+							<h3 class="title">{{ .Param "dotnetlisttitle" }}</h3>
+							<ul>
+								{{ range .Params.dotnetlist }}
+								<li>{{ .data }}</li>
+								{{end}}
+							</ul>
+
+						</div>
+					</div>
+
+					<div class="media">
+						<img src="/img/logos/java.svg" alt="logo" />
+						<div class="desc">
+							<h3 class="title">{{ .Param "javalisttitle" }}</h3>
+							<ul>
+								{{ range .Params.javalist }}
+								<li>{{ .data }}</li>
+								{{end}}
+							</ul>
+						</div>
+					</div>
+
+					<div class="media">
+						<img src="/img/database.svg" alt="logo" />
+						<div class="desc">
+							<h3 class="title">{{ .Param "databaselisttitle" }}</h3>
+							<ul>
+								{{ range .Params.databaselist }}
+								<li>{{ .data }}</li>
+								{{end}}
+							</ul>
+						</div>
+					</div>
+
+					<div class="media">
+						<img src="/img/logos/html.svg" alt="logo" />
+						<div class="desc">
+							<h3 class="title">{{ .Param "frontendlisttitle" }}</h3>
+							<ul>
+								{{ range .Params.frontendlist }}
+								<li>{{ .data }}</li>
+								{{end}}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#erp-section"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="erp-section"></div>
+	</section>
+
+	<section class="erp-section blue-light">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col fourth flow-opposite">
+					<img src="/img/cogs.svg" />
+				</div>
+				<div class="col three-fourths">
+					<h1>{{ .Param "erp.title" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+
+				<div class="col full">
+					<p>{{ .Param "erp.desc" }}</p>
+				</div>
+
+				<div class="col half">
+					<img src="/img/dynamics.png" alt="logo" class="brand"  />
+					<p>
+						{{ .Param "erp.navdesc" }}
+					</p>
+					<h3>{{ .Param "erp.navtitle" }}</h3>
+					<p>
+						{{ .Param "erp.navdetail" }} 
+					</p>
+					<p>
+						{{ .Param "erp.navdetail2" }}
+					</p>
+					<ul>
+						{{ range .Params.erpnavlist }}
+						<li>{{ .data }}</li>
+						{{end}}
+					</ul>
+					<h3>{{ .Param "erp.navtechtitle" }}</h3>
+					<ul>
+						<li>{{ .Param "erp.navtechsoftware" }}</h3></li>
+					</ul>
+				</div>
+
+				<div class="col half">
+					<img src="/img/oracle.png" alt="logo" class="brand" />
+					<p>{{ .Param "erp.oracledesc" }}</p>
+					<h3>{{ .Param "erp.oracletitle" }}</h3>
+					<p>
+						{{ .Param "erp.oracledetail" }}
+					</p>
+					<ul>
+						{{ range .Params.erporaclelist }}
+						<li>{{ .data }}</li>
+						{{end}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#qaas-section"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="qaas-section"></div>
+	</section>
+
+	<section class="qaas-section pink">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col fourth flow-opposite">
+					<img src="/img/qaas.svg" />
+				</div>
+				<div class="col three-fourths">
+					<h1>{{ .Param "qaas.title" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col full">
+					<p>{{ .Param "qaas.para1" }}</p>
+					<p>{{ .Param "qaas.para2" }}</p>
+					<p>{{ .Param "qaas.para3" }}</p>
+					<picture>
+						<source srcset="/img/dimension1.svg" media="(max-width: 640px)">
+						<source srcset="/img/dimension2.svg">
+						<img src="/img/dimension2.svg" style="width:auto;" id="dimension">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#ux-section"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="ux-section"></div>
+	</section>
+
+	<section class="ux-section purple">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col fourth flow-opposite">
+					<img src="/img/responsive.svg" />
+				</div>
+				<div class="col three-fourths">
+					<h1>{{ .Param "uxdesign_headline" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col half">
+					<p>
+						{{ .Param "uxdesign.desc" }}
+					</p>
+				</div>
+
+				<div class="col half">
+					<h2>{{ .Param "uxdesign.title_expertise" }}</h2>
+					<div class="media">
+						<img src="/img/ux.svg" alt="logo" />
+						<div class="desc">
+							<h3 class="title">{{ .Param "uxdesign.title_ux" }}</h3>
+							<p class="list">{{ .Param "uxdesign.desc_ux" }}</p>
+						</div>
+					</div>
+
+					<div class="media">
+						<img src="/img/ui.svg" alt="logo" />
+						<div class="desc">
+							<h3 class="title">{{ .Param "uxdesign.title_ui" }}</h3>
+							<p class="list">{{ .Param "uxdesign.desc_ui" }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ end }}

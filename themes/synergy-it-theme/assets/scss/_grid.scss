@@ -1,0 +1,42 @@
+// Grid
+
+// All widths in px
+$bp1: 430px;
+$bp2: 560px;
+$bp3: 768px;
+//$bp-sticky-header: 660px;
+$pad: 22;
+
+.container {
+	margin: 0 auto;
+	max-width: px2rem(960);
+	width: 100%;
+}
+
+.col {
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+	@include rem-vals(padding, true, 0, $pad);
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+@media screen and (min-width: $bp2 + 1 ) {
+	.col {
+		float: left;
+		margin: 0;
+		//@include rem-vals(padding, true, 0, $pad);
+		//padding-left: px2rem($main-line-ht-px);
+		//padding-right: px2rem($main-line-ht-px);
+	}
+	
+	.col.full { width: 100%; }
+	.col.three-fourths { width: 75%; }
+	.col.two-thirds { width: 66.7%; }
+	.col.half { width: 50%; }
+	.col.third { width: 33.3%; }
+	.col.fourth { width: 25%; }
+	.col.golden-large { width: 61.8%; }
+	.col.golden-small { width: 38.2%; }
+	.col.flow-opposite { float: right; }
+}

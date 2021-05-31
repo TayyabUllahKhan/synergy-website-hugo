@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+// Globals
+html {
+	font-size: percentage($root-font-size-px / 16);
+	scroll-behavior: smooth;
+}
+body {
+	font-family: $font-stack-alegreya;
+	color: $color-body-text;
+	text-rendering: optimizeLegibility;
+	
+	@media screen and (max-width: $bp2 ) {
+		@include font-size(16, 16, false);
+	}
+	@media screen and (max-width: $bp3 ) {
+		@include font-size(17, 17, false);
+	}
+}
+a {
+	color: $color-link;
+	text-decoration: none;
+	
+	&:hover {
+		color: tint($color-link, 30%);
+	}
+}
+
+ul, ol {
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+}
+
+ul li {
+	list-style-type: disc;
+	@include rem-vals(margin, false, 0, 0, 0, $main-line-ht-px);
+}
+
+ol li {
+	@include rem-vals(margin, false, 0, 0, 0, $main-line-ht-px);
+}
+
+.all-caps {
+	text-transform: uppercase;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 800; // "extra bold"
+}
+h1 {
+	@include font-size(32, 32, true);
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+}
+h2 {
+	@include font-size(19, $main-line-ht-px, true);
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px * 0.25, 0);
+}
+
+// Paragraph
+p {
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px, 0);
+}
+.lead-in {
+	font-size: larger;
+}
+
+// Buttons
+.btn {
+	position: relative;
+	@include rem-vals(padding, true, 10, 20);
+	background-color: $color-grey;
+	color: $color-white;
+	font-weight: bold;
+	display: inline-block;
+	text-align: center;
+	
+	.icon-arrow-down {
+		////position: absolute;
+		////right: px2rem(10);
+		////top: 15%;
+		font-size: 150%;
+		@include rem-vals(margin, false, 0, 0, 0, 10);
+		line-height: 1;
+		//height: 42px;
+		//line-height: 42px;
+	}
+}
+//.services .btn {
+//	@include font-size(20, $main-line-ht-px, true);
+//}
+
+// Top blurbs (stacked horizontally side by side)
+.top-blurbs {
+	.col {
+		@include rem-vals(margin, false, 0, 0, $main-line-ht-px * 2, 0);
+	}
+	h1 {
+		@include font-size(22, $main-line-ht-px, true);
+		font-weight: bold;
+		@include rem-vals(margin, false, 0, 0, $main-line-ht-px / 2, 0);
+	}
+	p {
+		@include rem-vals(margin, false, 0, 0, $main-line-ht-px / 2, 0);
+	}
+	.btn {
+		text-transform: uppercase;
+		width: 100%;
+		@include rem-vals(padding, true, 15, 10);
+	}
+}
+
+// Hero areas
+.hero-area {
+	
+	.container {
+		position: relative;
+	}
+	
+	img {
+		width: 100%;
+	}
+	// All the sorcery below for .hero-heading, .hero-heading:before, and .hero-heading-content
+	// is for middle vertical alignment of .hero-heading-content. (As such, I am showing symptoms of
+	// divitis here -- .hero-heading-content is purely for vertical alignment.)
+	// See: http://css-tricks.com/centering-in-the-unknown/
+	.hero-heading {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-color: transparentize($color-white, 0.3);
+		border-top: 3px solid $color-white;
+		border-bottom: 3px solid $color-white;
+		@include rem-vals(padding, true, $main-line-ht-px * 0.25, 0);
+		
+		&:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+		
+		.hero-heading-content {
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+			//margin-left: -1%;
+			margin-left: -0.2em;
+			//@include rem-vals(padding, false, 0, $main-line-ht-px * 0.5, 0, $main-line-ht-px * 0.5);
+			@include rem-vals(padding, false, 0, $pad, 0, $pad);
+		}
+		
+		h1 {
+			text-transform: uppercase;
+			margin-bottom: 0;
+			
+			span {
+				text-transform: lowercase;
+				font-weight: 800;
+			}
+		}
+		
+		h2 {
+			font-weight: normal;
+			@include font-size(15, $main-line-ht-px * 0.6, true);
+		}
+	}
+}
+
+// Sections
+section {
+	//@include rem-vals(margin, true, $main-line-ht-px * 2, 0);
+	@include rem-vals(margin, false, 0, 0, $main-line-ht-px * 2, 0);
+}
+
+@include section-colors("blue-dark", $color-blue-dark);
+@include section-colors("blue-light", $color-blue-light);
+@include section-colors("pink", $color-pink);
+@include section-colors("purple", $color-purple);
+
+.index .blue-dark .btn {
+	@include font-size(25);
+	@include rem-vals(margin, false, $main-line-ht-px * 2, 0, 0, 0);
+	text-align: center;
+}
+
+// Jumps between sections
+.jump {
+	@include rem-vals(margin, true, $main-line-ht-px * -1.5, 0, $main-line-ht-px * 2, 0);
+	
+	a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		border-bottom: 2px solid $color-blue-light;
+		color: $color-blue-light;
+
+		&:hover {
+			color: tint($color-blue-light, 30%);
+		}
+		
+		.icon-arrow-down {
+			font-size: 300%;
+			line-height: 1;
+			background-color: $color-white; 
+			@include rem-vals(padding, true, 0, 10);
+			position: relative;
+			top: px2rem(25);
+		}
+	}
+}
+section.top-blurbs + section.jump {
+	@include rem-vals(margin, true, $main-line-ht-px * -3.5, 0, $main-line-ht-px * 2, 0);
+}
+
+// Desktop/tablet styles
+// > 430 px
+@media screen and (min-width: $bp1 + 1 ) {
+	h1 {
+		@include font-size(46, 46, true);
+	}
+	h2 {
+		@include font-size(21, $main-line-ht-px, true);
+	}
+	.hero-area {
+		.hero-heading {
+			h2 {
+				@include font-size(19, $main-line-ht-px, true);
+			}
+		}
+	}
+}
+// > 560px
+@media screen and (min-width: $bp2 + 1 ) {
+	//bp3//h1 {
+	//bp3//	@include font-size(64, 64, true);
+	//bp3//}
+	
+	.top-blurbs {
+		h1 {
+			//@include font-size(24, 38.25, true);
+			@include font-size(24, $main-line-ht-px, false);
+		}
+		.col {
+			margin: 0;
+		}
+	}
+	
+	section.top-blurbs + section.jump {
+		@include rem-vals(margin, true, $main-line-ht-px * -1.5, 0, $main-line-ht-px * 2, 0);
+	}
+	
+	.hero-area {		
+		.hero-heading {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			background-color: transparent;
+			border: 0;
+			font-size: 0;
+			
+			.hero-heading-content {
+				background-color: transparentize($color-white, 0.3);
+				border-top: 3px solid $color-white;
+				border-bottom: 3px solid $color-white;
+				@include rem-vals(padding, false, $main-line-ht-px * 0.5, 0, $main-line-ht-px * 0.5, 0);
+				//@include rem-vals(padding, true, $main-line-ht-px * 0.5);
+				display: inline-block;
+				vertical-align: middle;
+				//width: 100%;
+				//margin-left: 0;
+			}
+			
+			h2 {
+				@include font-size(26, $main-line-ht-px * 1.25, true);
+			}
+		}
+	}
+	
+}
+
+// > 768px
+@media screen and (min-width: $bp3 + 1 ) {
+	h1 {
+		@include font-size(64, 64, true);
+	}
+	h2 {
+		@include font-size(25, $main-line-ht-px, true);
+	}
+}
+
+// SVG images on Services and Why Us pages (except the logo)
+.expertise .col img:not(.logo)[src$=".svg"],
+.services .col img:not(.logo)[src$=".svg"],
+.why-us .col img:not(.logo)[src$=".svg"] {
+	max-width: 50%;
+	display: block;
+	margin: 0 auto;
+	
+	@media screen and (min-width: $bp2 + 1 ) {
+		max-width: 100%;
+		margin: 0;
+		
+	}
+}
+
+.expertise .col img:not(.logo)[src$=".svg"]{
+	width: 100%;
+}

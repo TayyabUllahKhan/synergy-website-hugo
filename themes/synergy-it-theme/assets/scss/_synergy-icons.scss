@@ -1,0 +1,53 @@
+//
+// Icon Font: synergy-icons
+//
+
+@font-face {
+  font-family: "synergy-icons";
+  src: url("../fonts/synergy-icons.eot");
+  src: url("../fonts/synergy-icons.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/synergy-icons.woff") format("woff"),
+       url("../fonts/synergy-icons.ttf") format("truetype"),
+       url("../fonts/synergy-icons.svg#synergy-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "synergy-icons";
+    src: url("../fonts/synergy-icons.svg#synergy-icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-down:before,
+.icon-facebook:before,
+.icon-linkedin:before,
+.icon-nav:before,
+.icon-search:before,
+.icon-twitter:before {
+  display: inline-block;
+  font-family: "synergy-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow-down:before { content: "\f100"; }
+/*.icon-facebook:before { content: "\f09a"; }
+.icon-linkedin:before { content: "\f102"; }
+.icon-search:before { content: "\f104"; }
+.icon-twitter:before { content: "\f105"; }*/
+
+
+.icon-nav:before { content: "\f103"; }

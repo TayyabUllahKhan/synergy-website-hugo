@@ -1,0 +1,143 @@
+{{ define "main" }}
+<div class="about">
+	<section class="hero-area">
+		<div class="container">
+			<img src="/img/hero-about.jpg" />
+			<div class="hero-heading">
+				<div class="hero-heading-content">
+					<h1>{{ .Param "hero_area_title" | markdownify }}</h1>
+					<h2>{{ .Param "hero_area_tagline" | markdownify }}</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="top-blurbs">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col third blue-dark">
+					<a data-scroll class="btn" href="#about-us">
+						{{ T "aboutus" }} <i class="icon-arrow-down"></i>
+					</a>
+				</div>
+
+				<div class="col third blue-dark">
+					<a data-scroll class="btn" href="#culture">
+						{{ T "culture" }} <i class="icon-arrow-down"></i>
+					</a>
+				</div>
+
+				<div class="col third blue-dark">
+					<a data-scroll class="btn" href="#team">
+						{{ T "team" }} <i class="icon-arrow-down"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#about-us"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="about-us"></div>
+	</section>
+
+	<section class="about-us blue-dark">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<h1>{{ .Param "aboutusdesc.title" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col full">
+					<p>
+						<strong class="lead-in">
+							{{ .Param "aboutusdesc.lead" }}
+						</strong> 
+						{{ .Param "aboutusdesc.normal" }}
+					</p>
+					<p>
+						<strong class="all-caps">{{ T "base" }}:</strong> Islamabad, Pakistan<br />
+						<strong class="all-caps">{{ T "focus" }}:</strong> Global, with a strong base of clients in Scandinavia<br />
+						<strong class="all-caps">{{ T "who" }}:</strong> A team of highly educated, experienced IT professionals
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<h1 id=""></h1>
+		<h1 id=""></h1>
+		<h1 id="culture"></h1>
+		<div class="clearfix"></div>
+	</section>
+
+	<section class="culture blue-dark">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col golden-large flow-opposite">
+					<img src="/img/about-collage.jpg" />
+				</div>
+				<div class="col golden-small">
+					<h1>{{ .Param "culturedesc.title" }}</h1>
+					<h2>{{ .Param "culturedesc.lead" }}</h2>
+					<p>{{ .Param "culturedesc.para1" }}</p>
+					<p>{{ .Param "culturedesc.para2" }}</p>
+					<p>{{ .Param "culturedesc.para3" }}</p>
+					<a class="btn" href="mailto:hello@synergy-it.com">
+						{{ .Param "culturedesc.button" }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="jump">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<a data-scroll href="#team"><i class="icon-arrow-down"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="team"></div>
+	</section>
+
+	<section class="team blue-dark">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col full">
+					<h1>{{ .Param "teamdesc.title" }}</h1>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col full">
+					<h2>{{ .Param "teamdesc.lead" }}</h2>
+					<p>{{ .Param "teamdesc.desc" }}</p>						
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="col full company">
+					{{ range .Site.Data.team}}
+					<figure class="rockstar">
+						{{ if ne .url "#" }}<a href="{{ .url }}">{{ end }}
+							<img src="{{ .img }}" />
+							<figcaption>{{ .name }}<span>{{ .desg }}</span></figcaption>
+						{{ if ne .url "#" }}</a>{{ end }}
+					</figure>
+					{{ end }}				
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ end }}

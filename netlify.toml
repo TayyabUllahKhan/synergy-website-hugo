@@ -1,0 +1,51 @@
+[build]
+publish = "public/"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.73.0"
+HUGO_ENV = "production"
+
+[[redirects]]
+from = "/Content/About"
+to = "/about"
+
+[[redirects]]
+from = "/Content/Services"
+to = "/services"
+
+[[redirects]]
+from = "/Content/WhyUs"
+to = "/why-us"
+
+[[redirects]]
+from = "/Content/Expertise"
+to = "/expertise"
+
+[[redirects]]
+from = "/Content/CaseStudy"
+to = "/case-studies"
+
+[[redirects]]
+from = "/Content/ContactUs"
+to = "/contact"
+
+[[redirects]]
+from = "/Files/Scalable%20IT%20to%20the%20business.pdf"
+to = "/files/scalable-it-to-the-business.pdf"
+
+[[redirects]]
+from = "/Files/A%20MISSION%20IMPOSSIBLE%20MADE%20POSSIBLE.pdf"
+to = "/files/a-mission-impossible-made-possible.pdf"
+
+[[redirects]]
+from = "/Files/Focus%20on%20Quality.pdf"
+to = "/files/focus-on-quality.pdf"
+
+[[redirects]]
+from = "/Files/ICSSP%202014-SynergyIT-Collaboration.pdf"
+to = "/files/icssp-2014-synergy-it-collaboration.pdf"
+
+[[redirects]]
+from = "/Files/synergy-it-brochure.pdf"
+to = "/files/synergy-it-brochure.pdf"

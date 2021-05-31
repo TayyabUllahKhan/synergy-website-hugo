@@ -1,0 +1,25 @@
+// Case Studies page
+
+.case-studies {
+
+	.case-study {
+
+		.container {
+			border-bottom: 2px solid $color-grey;
+			@include rem-vals(padding, false, 0, 0, $main-line-ht-px * 2, 0);
+		}
+		
+		&:last-of-type .container {
+			border: 0;
+			padding: 0;
+		}
+	}
+}
+
+// > 768px
+@media screen and (min-width: $bp3 + 1 ) {
+	.case-studies .case-study h1 {
+		@include font-size(46, 46, true);
+	}
+	
+}

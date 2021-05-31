@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="contact">
+	<section class="hero-area">
+		<div class="container">
+			<img src="/img/hero-contact.jpg" />
+		</div>
+	</section>
+	<section class=" blue-dark">
+		<div class="container">
+			{{ range .Params.contactpage }}
+			<div class="row clearfix">
+				<div class="col half">
+					<h2>{{ .ques }}</h2>
+				</div>
+				<div class="col half">
+					<p>{{ .ans | markdownify }}</p>
+				</div>
+			</div>
+			{{end}}
+			</div>
+		</div>
+	</section>
+</div>
+{{ end }}

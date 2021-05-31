@@ -1,0 +1,82 @@
+title = "Synergy-IT"
+theme = "synergy-it-theme"
+baseURL = "https://synergy-it.com"
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[languages]
+
+  # Main menu for header navigation
+  [languages.en]
+    languageName = "English"
+    weight = 1
+
+  [[languages.en.menu.main]]
+    name = "About"
+    url = "about"
+    weight = 1
+
+  [[languages.en.menu.main]]
+    name = "Services"
+    url = "services"
+    weight = 2
+
+  [[languages.en.menu.main]]
+    name = "Why Us"
+    url = "why-us"
+    weight = 3
+
+  [[languages.en.menu.main]]
+    name = "Expertise"
+    url = "expertise"
+    weight = 4
+
+  [[languages.en.menu.main]]
+    name = "Case Studies"
+    url = "case-studies"
+    weight = 5
+
+  [[languages.en.menu.main]]
+    name = "Contact"
+    url = "contact"
+    weight = 6
+
+  [languages.da]
+    languageName = "Dansk"
+    weight = 2
+
+  [[languages.da.menu.main]]
+    name = "Om Os"
+    url = "om-os"
+    weight = 1
+
+  [[languages.da.menu.main]]
+    name = "Services"
+    url = "services"
+    weight = 2
+
+  [[languages.da.menu.main]]
+    name = "Hvorfor Vælge Os"
+    url = "hvorfor-vælge-os"
+    weight = 3
+
+  [[languages.da.menu.main]]
+    name = "Ekspertise"
+    url = "ekspertise"
+    weight = 4
+
+  [[languages.da.menu.main]]
+    name = "Case Studies"
+    url = "case-studies"
+    weight = 5
+
+  [[languages.da.menu.main]]
+    name = "Kontakt"
+    url = "kontakt"
+    weight = 6

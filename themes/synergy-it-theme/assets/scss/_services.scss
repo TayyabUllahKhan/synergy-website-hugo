@@ -1,0 +1,24 @@
+// Services page
+
+.services {
+	//@include font-size(19.5, $main-line-ht-px, true);
+	
+	.team-extensions,
+	.project-outsourcing,
+	.innovation-incubator	{
+		//@include font-size(19.5, 27.3, true);
+		//@include font-size(19.5, $main-line-ht-px, true);
+		
+		h2 {
+			//@include font-size(25);
+			//@include rem-vals(margin, false, 0, 0, $main-line-ht-px * 0.25, 0);
+		}
+	}
+}
+
+.w-300 {
+	width: 300px !important;
+}
+.w-400 {
+	width: 400px;
+}

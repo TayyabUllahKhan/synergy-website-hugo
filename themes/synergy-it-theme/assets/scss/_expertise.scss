@@ -1,0 +1,131 @@
+// Expertise page
+
+
+.media{
+	
+	margin: 1rem 0;
+	
+	img{
+		float: left;
+		margin-right: 0.5rem;
+		margin-top: 0.25rem;
+		display: block;
+		width: 2rem;
+		max-height: 2rem;
+
+	}
+	
+	img[src$=".svg"] {
+		width: 2rem !important;
+	}
+
+	.desc{
+		margin-left: 3rem;
+
+		p{margin-bottom: px2rem(16);}
+
+		.title{
+			font-weight: bold;
+		}
+
+		.list{
+			//color: @function tint($color-black, 0.5);
+		}
+
+	}
+}
+
+.expertise{
+
+	.soft-dev-section
+	{
+					
+			h2{
+				color: $color-blue-dark;
+				//font-weight: normal;
+			}
+			
+			ul{
+			
+				
+				ul{
+					margin: 5px;
+					
+					li{
+						line-height: 1.5;
+						list-style-type: circle;
+						
+						span{
+							text-decoration: underline;
+							
+						}
+					}
+				}
+			}
+	}
+
+	.erp-section{
+
+		h2{
+			color: $color-blue-light;
+		}
+
+		.brand{
+			width: auto;
+			height: px2rem(45);
+			margin-bottom: px2rem(16);
+		}
+
+		.media{
+				margin:0;
+			.desc{
+				margin-left: 0;
+			}
+		}
+
+
+	}
+	
+	.qaas-section{
+
+		h1{
+			margin-top: px2rem(36);
+		}
+
+		h2{
+			color: $color-pink;
+				
+		}
+		
+		.underline{
+			border-bottom: 1px solid;
+		}
+		
+		#dimension{
+			max-width: 100%;
+			width: 100%; 
+			max-height: 100%;
+			margin: px2rem(45) 0;
+		}
+		
+	}
+
+	.ux-section{
+
+		h1{
+			margin-top: px2rem(36);
+		}
+
+		h2{
+			color: $color-purple;
+				
+		}
+		
+		.underline{
+			border-bottom: 1px solid;
+		}
+	}
+
+}
+
+

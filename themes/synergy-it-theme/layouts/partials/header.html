@@ -1,0 +1,54 @@
+<header role="banner">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col full">
+        <a class="logo-container" href='{{ "/" | relLangURL }}'>
+          <img class="logo" src="/img/synergy-it-logo.svg" alt="SYNERGY-IT" />
+        </a>
+        <i class="icon-nav hamburger"></i>
+        <div id="menu-items">
+          <nav>
+            <ul>
+              {{ $currentPage := . }}
+              {{ range .Site.Menus.main }}
+              <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+                <a href="{{ .URL | relLangURL }}">
+                  {{ .Name }}
+                </a>
+              </li>
+              {{ end }}
+              <li>
+                {{ range $index, $value := .AllTranslations }}
+                {{ $isCurrentLang := eq $.Language .Language }}
+                {{ if $index }} &bull; {{ end }}<a href="{{ .Permalink | relURL }}"{{ if $isCurrentLang  }} class="selected-lang"{{ end }}>{{ .Language.Lang | upper }}</a>
+                {{ end }}
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>          
+    </div>
+  </div>
+</header>
+
+<div data-scroll-header class="sticky-header">
+  <a href='{{ "/" | relLangURL }}'><img class="logo" src="/img/synergy-it-logo.svg" /></a>
+  <nav>
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+        <a href="{{ .URL | relLangURL }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+      <li>
+        {{ range $index, $value := .AllTranslations }}
+        {{ $isCurrentLang := eq $.Language .Language }}
+        {{ if $index }} &bull; {{ end }}<a href="{{ .Permalink | relURL }}"{{ if $isCurrentLang  }} class="selected-lang"{{ end }}>{{ .Language.Lang | upper }}</a>
+        {{ end }}
+      </li>
+    </ul>
+  </nav>
+</div>

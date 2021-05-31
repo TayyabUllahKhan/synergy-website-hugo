@@ -1,0 +1,23 @@
+- id: aboutus
+  translation: "about us"
+
+- id: culture
+  translation: "culture"
+
+- id: team
+  translation: "team"
+
+- id: base
+  translation: "base"
+
+- id: focus
+  translation: "focus"
+
+- id: who
+  translation: "who"    
+
+- id: footer_title
+  translation: "About"  
+
+- id: footer_desc
+  translation: "Founded in 2013, Synergy builds on 15+ years’ experience in IT offshoring—we know our way around enterprise portfolios from front-end systems and business workflows to back-end, integration, and data services. We build accurate, scalable, and reliable systems."  

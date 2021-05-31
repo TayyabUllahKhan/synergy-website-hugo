@@ -1,0 +1,23 @@
+- id: aboutus
+  translation: "om os"
+
+- id: culture
+  translation: "kultur"
+
+- id: team
+  translation: "teamet"  
+
+- id: base
+  translation: "base"
+
+- id: focus
+  translation: "fokus"
+
+- id: who
+  translation: "hvem"   
+
+- id: footer_title
+  translation: "Om os"  
+
+- id: footer_desc
+  translation: "Synergy er stiftet i 2013, men bygger på mere end 15 års solid erfaring med it-offshoring. Vi kender alle de typiske udfordringer med forretnings- og it-udvikling. Lige fra front-end–systemer og forretningsprocesser til back-end, integration og dataservices. Vi bygger præcise, skalerbare og robuste systemer."  

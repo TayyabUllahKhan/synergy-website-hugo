@@ -1,0 +1,144 @@
+// About page
+// Just a comment
+
+//.company {
+//	// Doing this because inline-block elements have a tiny space between
+//	// them, and .rockstar is inline-block.
+//	// See http://css-tricks.com/fighting-the-space-between-inline-block-elements/
+//	font-size: 0;
+//}
+.rockstar {
+	
+	position: relative;
+	//display: inline-block;
+	float: left;
+	background-color: $color-blue-light;
+	//@include rem-vals(margin, false, 0, 8, 8, 0);
+	margin-right: percentage(8px / $bp1);
+	margin-top: percentage(8px / $bp1);
+	width: percentage( (($bp1 - 8px) / 2) / $bp1);
+	
+	&:nth-child(2n) {
+		margin-right: 0;
+	}
+	
+	img {
+		display: block;
+		width: 100%;
+	}
+	
+	figcaption {
+		display: none;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		//right: 0;
+		background-color: $color-blue-light;
+		opacity: .86;
+		@include rem-vals(padding, true, 2, 5);
+		@include font-size(16, 20, true);
+		font-weight: bold;
+		width: 100%;
+		
+		span {
+			@include font-size(15, 20, true);
+			display: block;
+			font-weight: normal;
+		}
+	}
+	
+	&:hover figcaption {
+		display: block;
+	}
+	
+	a {
+		color: inherit;
+	}
+}
+
+// Decrease the font size of hero area heading
+// (only on About page)
+@media screen and (min-width: $bp1 + 1 ) {
+	.about .hero-heading-content h1 {
+		@include font-size(46, 46, true);
+	}
+}
+
+// For touch screens, show the figcaption for all .rockstar's
+// .touch is added by Modernizr
+html.touch .rockstar figcaption {
+	display: block;
+	position: relative;
+	height: px2rem(80);
+}
+
+// Decrease the font size of hero area heading
+// (only on About page)
+@media screen and (min-width: $bp1 + 1 ) {
+	.about .hero-heading-content h1 {
+		@include font-size(46, 46, true);
+	}
+}
+
+// > 430 px
+@media screen and (min-width: $bp1 + 1 ) {
+	.rockstar {
+		margin-right: percentage(8px / $bp1);
+		margin-top: percentage(8px / $bp1);
+		width: percentage( (($bp1 - 16px) / 3) / $bp1);
+
+		&:nth-child(2n) {
+			margin-right: percentage(8px / $bp1);
+		}
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+}
+
+// > 560px
+@media screen and (min-width: $bp2 + 1 ) {
+	.rockstar {
+		margin-right: percentage(8px / $bp2);
+		margin-top: percentage(8px / $bp2);
+		width: percentage( (($bp2 - 24px) / 4) / $bp2);
+		
+		&:nth-child(2n) {
+			margin-right: percentage(8px / $bp2);
+		}
+		
+		&:nth-child(3n) {
+			margin-right: percentage(8px / $bp2);
+		}
+		
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+}
+
+// > 768px
+@media screen and (min-width: $bp3 + 1 ) {
+	.rockstar {
+		margin-right: percentage(8px / $bp3);
+		margin-top: percentage(8px / $bp3);
+		width: percentage( (($bp3 - 40px) / 6) / $bp3);
+		
+		&:nth-child(2n) {
+			margin-right: percentage(8px / $bp3);
+		}
+		
+		&:nth-child(3n) {
+			margin-right: percentage(8px / $bp3);
+		}
+		
+		&:nth-child(4n) {
+			margin-right: percentage(8px / $bp3);
+		}
+		
+		&:nth-child(6n) {
+			margin-right: 0;
+		}
+	}
+}

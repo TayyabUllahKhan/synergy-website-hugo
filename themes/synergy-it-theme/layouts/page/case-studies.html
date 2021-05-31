@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="case-studies">
+	<section class="hero-area">
+		<div class="container">
+			<img src="/img/hero-case-studies.jpg" />
+			<div class="hero-heading">
+				<div class="hero-heading-content">
+					<h1>{{ .Param "hero_area_title" }}</h1>
+					<h2>
+						{{ .Param "hero_area_tagline" }}
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="case-study blue-dark">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col half flow-opposite">
+					<img src="/img/case-study-scalable-it.jpg" />
+				</div>
+				<div class="col half">
+					<h1>{{ .Param "case1.title" }}</h1>
+					<p>{{ .Param "case1.desc" }}</p>
+					<a target="_blank" class="btn" href="/files/scalable-it-to-the-business.pdf">
+						{{ .Param "read_casestudy_btn" }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="case-study blue-light">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col half">
+					<img src="/img/case-study-mission-impossible.jpg" />
+				</div>
+				<div class="col half">
+					<h1>{{ .Param "case2.title" }}</h1>
+					<p>{{ .Param "case2.desc" }}</p>
+					<a target="_blank" class="btn" href="/files/a-mission-impossible-made-possible.pdf">
+						{{ .Param "read_casestudy_btn" }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="case-study pink">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col half flow-opposite">
+					<img src="/img/case-study-qns.jpg" />
+				</div>
+				<div class="col half">
+					<h1>{{ .Param "case3.title" }}</h1>
+					<p>{{ .Param "case3.desc" }}</p>
+					<a target="_blank" class="btn" href="/files/focus-on-quality.pdf">
+						{{ .Param "read_casestudy_btn" }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ end }}

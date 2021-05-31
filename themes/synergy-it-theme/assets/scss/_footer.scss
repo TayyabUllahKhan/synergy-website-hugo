@@ -1,0 +1,40 @@
+// Footer
+
+footer {
+	background-color: $color-grey;
+	@include rem-vals(padding, true, $main-line-ht-px * 2, 0);
+	//@include rem-vals(margin, true, $main-line-ht-px * 2, 0);
+	
+	h1 {
+		@include font-size(20, $main-line-ht-px, true);
+		//@include rem-vals(margin, true, 0, 0, $main-line-ht-px, 0);
+	}
+}
+
+.social-media {
+	@include font-size(70);
+	text-align: center;
+	
+	a {
+		color: $color-blue-dark;
+		
+		&:hover {
+			color: tint($color-blue-dark, 30%);
+		}
+		
+		> i {
+			border-radius: 50%;
+		}
+	}
+	
+	li {
+		list-style-type: none;
+		//float: left;
+		display: inline-block;
+		@include rem-vals(margin, true, 0, $main-line-ht-px * 0.25);
+		
+		//&:first-child {
+		//	margin-left: 0;
+		//}
+	}
+}

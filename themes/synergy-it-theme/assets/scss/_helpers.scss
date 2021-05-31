@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+//* Colors */
+$color-body-text:     #222;
+$color-link:       #245da9;
+
+$color-blue-light: #78bce8;
+$color-blue-dark:  #1f4a83;
+$color-pink:       #ed1e6b;
+$color-purple:     #885C98;
+$color-grey:       #ececec;
+$color-grey-2:     #f1f1f1;
+
+$color-white:         #fff;
+$color-black:         #000;
+
+// Add percentage of white to a color
+@function tint($color, $percent) {
+	@return mix(white, $color, $percent);
+}
+
+//* Typography */
+//$root-font-size-px: 17;
+$root-font-size-px: 19.5;
+//$main-line-ht-px: 25.5;
+//$main-line-ht-px: 27.3;
+$main-line-ht-px: 29.25;
+$main-line-ht-unitless: ($main-line-ht-px / $root-font-size-px);
+$main-line-ht-rem: ($main-line-ht-unitless) + rem;
+
+$font-stack-alegreya: 'Alegreya Sans', 'Trebuchet MS', Verdana, Arial, sans-serif;
+
+@mixin font-size ($size: $root-font-size-px, $line: $main-line-ht-px, $include-line-ht:true) {
+	font-size: ($size / $root-font-size-px) + rem;
+	@if $include-line-ht == true { line-height: $line / $size; }
+}
+
+// Convert px to rem
+// $size in px
+@function px2rem($size) {
+	@return $size / $root-font-size-px + rem;
+}
+
+//* Misc */
+// For calculating paddings, margins
+// $prop = property = could be margin, padding
+// $val is in px
+// when $shorthand = false, $val must have all four values...
+// but for $shorthand = true, $val can use standard CSS shorthand values
+@mixin rem-vals ($prop, $shorthand, $val...) {
+	@if $shorthand == true {
+		$n: length($val);
+		$i: 1;
+		$rem-list: ();
+		@while $i <= $n {
+			@if nth($val, $i) == auto {
+				$rem-list: append($rem-list, auto);
+			} @else if nth($val, $i) != 0 {
+				$computed: nth($val, $i) / $root-font-size-px + rem;
+				$rem-list: append($rem-list, $computed);
+			} @else {
+				$rem-list: append($rem-list, 0);
+			}
+			$i: $i + 1;
+		}
+		#{$prop}: $rem-list;
+	
+	} @else {
+		// $shorthand is false
+		$t: nth($val, 1);
+		$r: nth($val, 2);
+		$b: nth($val, 3);
+		$l: nth($val, 4);
+		
+		@if $t != 0 { #{$prop}-top: $t / $root-font-size-px + rem; }
+		@if $r != 0 { #{$prop}-right: $r / $root-font-size-px + rem; }
+		@if $b != 0 { #{$prop}-bottom: $b / $root-font-size-px + rem; }
+		@if $l != 0 { #{$prop}-left: $l / $root-font-size-px + rem; }
+	}
+}
+
+// Section colors
+// $color-name should be one of the $color-* variables (defined up top)
+@mixin section-colors ($class-name, $color) {
+	.#{$class-name} {
+		h1 {
+			color: $color;
+		}
+		.btn {
+			background-color: $color;
+		}
+		a.btn:hover {
+			color: $color-white;
+			background-color: tint($color, 30%);
+		}
+	}
+}
